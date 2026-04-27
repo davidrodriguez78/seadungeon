@@ -11,6 +11,8 @@ function i_enemy()
                 add(octu,{
                     x=x*8,
                     y=y*8,
+                    w=8,
+                    h=8,
                     dx=0,
                     dy=0,
                     spd=0.6,
@@ -29,10 +31,13 @@ function u_enemy()
         local ly=oc.y
         oc.x+=oc.dx
         oc.y+=oc.dy
-        oc.dx = oc.spd
+        --oc.dx = oc.spd
         if ene_map_collide(oc) then
             oc.x=lx
             oc.y=ly
+        end
+        if hit_enemy(oc) then
+            del(octu,oc)
         end
     end
 end
@@ -71,5 +76,23 @@ function ene_map_collide(obj)
         return true
     else
         return false
+    end
+end
+function hit_enemy(obj)
+    for b in all(bubble) do
+        local bx1=(b.x-1)/8
+        local bx2=(b.x+3)/8
+        local by1=b.y/8
+        local by2=(b.y+4)/8
+        
+        if bx1<obj.x and
+            bx2>obj.x+7 and 
+            by1<obj.y and
+            by2 >obj.y+7 then
+            return true
+            else
+                return false
+        end
+        
     end
 end

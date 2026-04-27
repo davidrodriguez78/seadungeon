@@ -26,12 +26,10 @@ function _draw()
     --ui
     camera()
     d_ui()
-    print(rooms,63,1,7)
-    print(plr.x,63,9,7)
-    print(plr.y,63,18,7)
+    
     --stats
-    -- print("mem: "..stat(0),0,0,7)
-    -- print("cpu: "..stat(1),0,10,7)
-    -- print("fps: "..stat(7),0,20,7)
+    print("mem: "..stat(0),0,0,7)
+    print("cpu: "..stat(1),0,10,7)
+    print("fps: "..stat(7),0,20,7)
 
 end

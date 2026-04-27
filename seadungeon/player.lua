@@ -5,6 +5,8 @@ function i_plr()
         y=4*8,
         dx=0,
         dy=0,
+        w=8,
+        h=8,
         sp=1,
         spd=1,
         state="idle",
