@@ -1,5 +1,5 @@
 function i_ui()
-    --
+    --init
 end
 
 function u_ui()
